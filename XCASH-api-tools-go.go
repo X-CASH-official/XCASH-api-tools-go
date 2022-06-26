@@ -325,11 +325,11 @@ func DPOPS_vote_status() (*DPOPSVoteStatus,*BlockchainError) {
   return &d1,&e1
 }
 
-func DPOPS_delegate_register(delegate string, IP string) (*DPOPSDelegateRegister,*BlockchainError) {
+func DPOPS_delegate_register(delegate string, IP string, key string) (*DPOPSDelegateRegister,*BlockchainError) {
     var d1 DPOPSDelegateRegister
     var e1 BlockchainError
     
-	data_send,error := send_http_data("http://" + XCASH_WALLET_ADDRESS + "/json_rpc",`{"jsonrpc":"2.0","id":"0","method":"delegate_register","params":{"delegate_name":"` + delegate + `","delegate_IP_address":"` + IP +`"}}`)
+	data_send,error := send_http_data("http://" + XCASH_WALLET_ADDRESS + "/json_rpc",`{"jsonrpc":"2.0","id":"0","method":"delegate_register","params":{"delegate_name":"` + delegate + `","delegate_IP_address":"` + IP + `","delegates_public_key":"` + key +`"}}`)
     if !strings.Contains(data_send, "\"status\": \"OK\"") || error != nil {
       if err := json.Unmarshal([]byte(data_send), &e1); err != nil {
         return nil,nil
