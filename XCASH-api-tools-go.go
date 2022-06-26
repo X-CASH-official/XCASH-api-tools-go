@@ -893,16 +893,6 @@ func Namespace_remote_data_renewal_end(tx string) (*NamespaceRemoteDataRenewalEn
   return &d1,&e1
 }
 
-
-
-
-
-
-
-
-
-
-
 func API_Blockchain_stats() (*APIBlockchainStats) {
     var d1 APIBlockchainStats
     
@@ -1240,11 +1230,6 @@ func API_Namespace_address_to_name(address string) (*APINamespaceAddressToName) 
     }
     return &d1
 }
-
-
-
-
-
 
 func API_Xpayment_Twitter_stats() (*APIXpaymentTwitterStats) {
     var d1 APIXpaymentTwitterStats
