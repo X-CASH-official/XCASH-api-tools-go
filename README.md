@@ -5,7 +5,7 @@ The tool covers:
 Global API (includes [DPOPS](https://docs.xcash.foundation/api/dpops), [Namespace](https://docs.xcash.foundation/api/namespace) and [Xpayment Twitter](https://docs.xcash.foundation/api/xpayment-twitter))  
 Blockchain ([xcash daemon](https://docs.xcash.foundation/applications/rpc-calls/json-rpc-methods) and [xcash wallet](https://docs.xcash.foundation/applications/rpc-calls/xcash-wallet-rpc))
 
-Most methods are inclduing
+Most methods are included
 
 
 # How to Install
@@ -16,23 +16,28 @@ go get github.com/X-CASH-official/XCASH-api-tools-go
 ```
 
 Add the import
-```shell
+```go
 github.com/X-CASH-official/XCASH-api-tools-go
 ```
 
 # How to setup
 
 Default Configuration (will use remote daemon and remote wallet)
-```shell
+```go
 const XCASH_DAEMON_ADDRESS = "";
 const XCASH_WALLET_ADDRESS = "";
 ```
 
 For example if you want to use a local xcash daemon and xcash wallet  
 Default Configuration (will use remote daemon and remote wallet)
-```shell
+```go
 const XCASH_DAEMON_ADDRESS = "127.0.0.1:18281";
 const XCASH_WALLET_ADDRESS = "127.0.0.1:18285";
+```
+
+Initialize the settings  
+```go
+xcash.Initialize(XCASH_DAEMON_ADDRESS,XCASH_WALLET_ADDRESS);
 ```
 
 # Testing
@@ -49,7 +54,7 @@ The full request structure of each method can be found in [here](https://github.
 The full response structure of each request can be found in [here](https://github.com/X-CASH-official/XCASH-api-tools-go/blob/main/XCASH-api-tools-go-structures.go)
 
 Global API calls will just return the structure or nil  
-All other calls return the structure or nil and an error structure or nill.  
+All other calls return the structure or nil and an error structure or nil.  
 
 The example below calls one method from the global API, and one method from the Blockchain
 
@@ -57,9 +62,9 @@ The example below calls one method from the global API, and one method from the 
 package main
 
 import (
-	"fmt"
-    "os"
-	"github.com/X-CASH-official/XCASH-api-tools-go"
+"fmt"
+"os"
+"github.com/X-CASH-official/XCASH-api-tools-go"
 )
 
 func main() {
@@ -110,7 +115,7 @@ func main() {
 		os.Exit(1)
 	}
     
-    fmt.Println(APIStats.Height) // prints 993163
+    fmt.Println(APIStats.Height) // prints 810000
     
     s,error = json.Marshal(APIStats)
     if error != nil {
