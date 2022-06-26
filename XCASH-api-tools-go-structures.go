@@ -452,3 +452,484 @@ type BlockchainIncomingTransfers struct {
 		} `json:"transfers"`
 	} `json:"result"`
 }
+
+type BlockchainQueryKey struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Key string `json:"key"`
+	} `json:"result"`
+}
+
+type BlockchainMakeIntegratedAddress struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		IntegratedAddress string `json:"integrated_address"`
+		PaymentID         string `json:"payment_id"`
+	} `json:"result"`
+}
+
+type BlockchainSplitIntegratedAddress struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		IsSubaddress    bool   `json:"is_subaddress"`
+		PaymentID       string `json:"payment_id"`
+		StandardAddress string `json:"standard_address"`
+	} `json:"result"`
+}
+
+type BlcokchainRescanBlockchain struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+	} `json:"result"`
+}
+
+type BlockchainGetTxKey struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		TxKey string `json:"tx_key"`
+	} `json:"result"`
+}
+
+type BlockchainCheckTxKey struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Confirmations int   `json:"confirmations"`
+		InPool        bool  `json:"in_pool"`
+		Received      int64 `json:"received"`
+	} `json:"result"`
+}
+
+type BlockchainGetTxProof struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Signature string `json:"signature"`
+	} `json:"result"`
+}
+
+type BlockchainCheckTxProof struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Confirmations int   `json:"confirmations"`
+		Good          bool  `json:"good"`
+		InPool        bool  `json:"in_pool"`
+		Received      int64 `json:"received"`
+	} `json:"result"`
+}
+
+type BlockchainGetSpendProof struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Signature string `json:"signature"`
+	} `json:"result"`
+}
+
+type BlockchainCheckSpendProof struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Good bool `json:"good"`
+	} `json:"result"`
+}
+
+type BlockchainGetReserveProof struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Signature string `json:"signature"`
+	} `json:"result"`
+}
+
+type BlockchainCheckReserveProof struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Good  bool `json:"good"`
+		Spent int  `json:"spent"`
+		Total int  `json:"total"`
+	} `json:"result"`
+}
+
+type BlockchainSign struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Signature string `json:"signature"`
+	} `json:"result"`
+}
+
+type BlockchainVerify struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Good bool `json:"good"`
+	} `json:"result"`
+}
+
+type BlockchainRescanSpent struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+	} `json:"result"`
+}
+
+type BlockchainValidateAddress struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Valid bool `json:"valid"`
+	} `json:"result"`
+}
+
+type BlockchainCreateWallet struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+	} `json:"result"`
+}
+
+type BlockchainOpenWallet struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+	} `json:"result"`
+}
+
+type BlockchainCloseWallet struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+	} `json:"result"`
+}
+
+type BlockchainChangeWalletPassword struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+	} `json:"result"`
+}
+
+type NamespaceUpdateRemoteData struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Status string `json:"status"`
+	} `json:"result"`
+}
+
+type NamespaceRemoteDataSaveName struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Status string `json:"status"`
+	} `json:"result"`
+}
+
+type NamespaceRemoteDataPurchaseName struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Status string `json:"status"`
+	} `json:"result"`
+}
+
+type NamespaceRemoteDataDelegateSetAmount struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Status string `json:"status"`
+	} `json:"result"`
+}
+
+type NamespaceRemoteDataRenewalStart struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Status string `json:"status"`
+	} `json:"result"`
+}
+
+type NamespaceRemoteDataRenewalEnd struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Status string `json:"status"`
+	} `json:"result"`
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+type APIBlockchainStats struct {
+	Height                 int `json:"height"`
+	Hash                   string `json:"hash"`
+	Reward                 int64 `json:"reward"`
+	Size                   int64 `json:"size"`
+	Version                int `json:"version"`
+	VersionBlockHeight     int `json:"versionBlockHeight"`
+	NextVersionBlockHeight int `json:"nextVersionBlockHeight"`
+	TotalPublicTx                int `json:"totalPublicTx"`
+	TotalPrivateTx                int `json:"totalPrivateTx"`
+	CirculatingSupply      int64 `json:"circulatingSupply"`
+	GeneratedSupply        int64 `json:"generatedSupply"`
+	TotalSupply            int64 `json:"totalSupply"`
+	EmissionReward         int64 `json:"emissionReward"`
+        EmissionHeight         int `json:"emissionHeight"`
+    	EmissionTime           int `json:"emissionTime"`
+        InflationHeight        int `json:"inflationHeight"`
+    	InflationTime          int `json:"inflationTime"`
+}
+
+type APIBlockchainBlockData struct {
+	Height       int           `json:"height"`
+	Hash         string        `json:"hash"`
+	Reward       int64         `json:"reward"`
+	Time         int           `json:"time"`
+	XcashDPOPS   bool          `json:"xcashDPOPS"`
+	DelegateName string        `json:"delegateName"`
+	Tx           []string      `json:"tx"`
+}
+
+type APIBlockchainTxData struct {
+	Height        int    `json:"height"`
+	Confirmations int    `json:"confirmations"`
+	Time          int    `json:"time"`
+	Type          string `json:"type"`
+	Sender        string `json:"sender"`
+	Receiver      string `json:"receiver"`
+	Amount        int64    `json:"amount"`
+}
+
+type APIBlockchainProveTx struct {
+	Valid  bool `json:"valid"`
+	Amount int64  `json:"amount"`
+}
+
+type APIBlockchainProveBalance struct {
+	Amount       int64 `json:"amount"`
+}
+
+type APIBlockchainTxHistory []struct {
+	Tx       string `json:"tx"`
+	Key      string `json:"key"`
+	Sender   string `json:"sender"`
+	Receiver string `json:"receiver"`
+	Amount   int    `json:"amount"`
+	Height   int    `json:"height"`
+	Time     int    `json:"time"`
+}
+
+type APIBlockchainValidateAddress struct {
+	Valid       bool `json:"valid"`
+}
+
+type APIBlockchainCreateIntegratedAddress struct {
+	IntegratedAddress string `json:"integratedAddress"`
+	PaymentID         string `json:"paymentId"`
+}
+
+
+
+// XCASH DPOPS
+
+type APIDPOPSStats struct {
+	MostTotalRoundsDelegateName                   string `json:"mostTotalRoundsDelegateName"`
+	MostTotalRounds                               int    `json:"mostTotalRounds"`
+	BestBlockVerifierOnlinePercentageDelegateName string `json:"bestBlockVerifierOnlinePercentageDelegateName"`
+	BestBlockVerifierOnlinePercentage             int    `json:"bestBlockVerifierOnlinePercentage"`
+	MostBlockProducerTotalRoundsDelegateName      string `json:"mostBlockProducerTotalRoundsDelegateName"`
+	MostBlockProducerTotalRounds                  int    `json:"mostBlockProducerTotalRounds"`
+	TotalVotes                                    int64  `json:"totalVotes"`
+	TotalVoters                                   int    `json:"totalVoters"`
+	AverageVote                                   int64  `json:"averageVote"`
+	VotePercentage                                int    `json:"votePercentage"`
+	RoundNumber                                   int    `json:"roundNumber"`
+	TotalRegisteredDelegates                      int    `json:"totalRegisteredDelegates"`
+	TotalOnlineDelegates                          int    `json:"totalOnlineDelegates"`
+	CurrentBlockVerifiersMaximumAmount            int    `json:"currentBlockVerifiersMaximumAmount"`
+	CurrentBlockVerifiersValidAmount              int    `json:"currentBlockVerifiersValidAmount"`
+}
+
+type APIDPOPSDelegates struct {
+	Votes                    int64  `json:"votes"`
+	Voters                   int    `json:"voters"`
+	IPAdress                 string `json:"IPAdress"`
+	DelegateName             string `json:"delegateName"`
+	SharedDelegate           bool   `json:"sharedDelegate"`
+	SeedNode                 bool   `json:"seedNode"`
+	Online                   bool   `json:"online"`
+	Fee                      int    `json:"fee"`
+	TotalRounds              int    `json:"totalRounds"`
+	TotalBlockProducerRounds int    `json:"totalBlockProducerRounds"`
+	OnlinePercentage         int    `json:"onlinePercentage"`
+}
+
+type APIDPOPSDelegate struct {
+	Votes                    int64  `json:"votes"`
+	Voters                   int    `json:"voters"`
+	IPAdress                 string `json:"IPAdress"`
+	DelegateName             string `json:"delegateName"`
+	PublicAddress            string `json:"publicAddress"`
+	About                    string `json:"about"`
+	Website                  string `json:"website"`
+	Team                     string `json:"team"`
+	Specifications           string `json:"specifications"`
+	SharedDelegate           bool   `json:"sharedDelegate"`
+	SeedNode                 bool   `json:"seedNode"`
+	Online                   bool   `json:"online"`
+	Fee                      int    `json:"fee"`
+	TotalRounds              int    `json:"totalRounds"`
+	TotalBlockProducerRounds int    `json:"totalBlockProducerRounds"`
+	OnlinePercentage         int    `json:"onlinePercentage"`
+	Rank                     int    `json:"rank"`
+}
+
+type APIDPOPSDelegateRoundStats struct {
+	TotalBlocksProduced int `json:"totalBlocksProduced"`
+	TotalBlockRewards   int64 `json:"totalBlockRewards"`
+	AveragePercentage   int `json:"averagePercentage"`
+	AverageTime         int `json:"averageTime"`
+	BlocksProduced      []struct {
+		BlockHeight int `json:"blockHeight"`
+		BlockReward int64 `json:"blockReward"`
+		Time        int `json:"time"`
+	} `json:"blocksProduced"`
+}
+
+type APIDPOPSDelegatesVotes struct {
+	PublicAddress string `json:"publicAddress"`
+	Amount        int64    `json:"amount"`
+	ReserveProof  string `json:"reserveProof"`
+}
+
+type APIDPOPSVoteDetails struct {
+	DelegateName  string `json:"delegateName"`
+	Amount        int64    `json:"amount"`
+}
+
+type APIDPOPSRoundDetails struct {
+	Delegates []string `json:"delegates"`
+}
+
+type APIDPOPSLastBlockProducer struct {
+	LastBlockProducer string `json:"lastBlockProducer"`
+}
+
+// XCASH Namespace
+type APINamespaceStats struct {
+	TotalNamesRegisteredOrRenewed int `json:"totalNamesRegisteredOrRenewed"`
+	TotalVolume                   int64 `json:"totalVolume"`
+}
+
+type APINamespaceRegisteredDelegates struct {
+	DelegateName  string `json:"delegateName"`
+	PublicAddress string `json:"publicAddress"`
+	Amount        int64    `json:"amount"`
+}
+
+type APINamespaceDelegates struct {
+	DelegateName                  string `json:"delegateName"`
+	PublicAddress                 string `json:"publicAddress"`
+	Amount                        int64    `json:"amount"`
+	TotalNamesRegisteredOrRenewed int    `json:"totalNamesRegisteredOrRenewed"`
+	TotalVolume                   int64    `json:"totalVolume"`
+}
+
+type APINamespaceName struct {
+	Address        string `json:"address"`
+	Saddress       string `json:"saddress"`
+	Paddress       string `json:"paddress"`
+	Expires        int    `json:"expires"`
+	DelegateName   string `json:"delegateName"`
+	DelegateAmount int64    `json:"delegateAmount"`
+}
+
+type APINamespaceNameStatus struct {
+	Status bool `json:"status"`
+}
+
+type APINamespaceAddressStatus struct {
+	Status string `json:"status"`
+}
+
+type APINamespaceNameToAddress struct {
+	Address  string `json:"address"`
+	Saddress string `json:"saddress"`
+	Paddress string `json:"paddress"`
+}
+
+type APINamespaceAddressToName struct {
+	Name      string `json:"name"`
+	Extension string `json:"extension"`
+}
+
+// Xpayment Twitter 
+type APIXpaymentTwitterStats struct {
+	TotalUsers                     int `json:"totalUsers"`
+	AvgTipAmount                   int `json:"avgTipAmount"`
+	TotalDeposits                  int `json:"totalDeposits"`
+	TotalWithdraws                 int `json:"totalWithdraws"`
+	TotalTipsPublic                int `json:"totalTipsPublic"`
+	TotalTipsPrivate               int `json:"totalTipsPrivate"`
+	TotalVolumeSentPublic          int64 `json:"totalVolumeSentPublic"`
+	TotalVolumeSentPrivate         int64 `json:"totalVolumeSentPrivate"`
+	TotalTipsLastDayPublic         int `json:"totalTipsLastDayPublic"`
+	TotalTipsLastDayPrivate        int `json:"totalTipsLastDayPrivate"`
+	TotalVolumeSentLastDayPublic   int64 `json:"totalVolumeSentLastDayPublic"`
+	TotalVolumeSentLastDayPrivate  int64 `json:"totalVolumeSentLastDayPrivate"`
+	TotalTipsLastHourPublic        int `json:"totalTipsLastHourPublic"`
+	TotalTipsLastHourPrivate       int `json:"totalTipsLastHourPrivate"`
+	TotalVolumeSentLastHourPublic  int64 `json:"totalVolumeSentLastHourPublic"`
+	TotalVolumeSentLastHourPrivate int64 `json:"totalVolumeSentLastHourPrivate"`
+}
+
+type APIXpaymentTwitterStatsPerDay struct {
+	Time   int `json:"time"`
+	Amount int `json:"amount"`
+	Volume int64 `json:"volume"`
+}
+
+type TopTips struct {
+		Username string `json:"username"`
+		Tips     int    `json:"tips"`
+	}
+	
+	type TopVolumes struct {
+		Username string `json:"username"`
+		Volume   int    `json:"volume"`
+}
+
+type APIXpaymentTwitterTopStats struct {
+	TopTips []TopTips
+	TopVolumes []TopVolumes
+}
+
+type APIXpaymentTwitterRecentTips struct {
+	TweetID  string `json:"tweetId"`
+	FromUser string `json:"fromUser"`
+	ToUser   string `json:"toUser"`
+	Amount   int64    `json:"amount"`
+	Time     int    `json:"time"`
+	Type     string `json:"type"`
+}
