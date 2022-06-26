@@ -100,7 +100,7 @@ func main() {
       "jsonrpc": "2.0",  
       "result": {  
         "count": 993163,  
-        "status": "OK"
+        "status": "OK",
         "untrusted": "false"  
       }  
     }  
