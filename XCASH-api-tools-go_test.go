@@ -174,3 +174,243 @@ func TestBlockchain_get_height(t *testing.T) {
 	}
 	time.Sleep(5 * time.Second)
 }*/
+
+func TestAPI_Blockchain_stats(t *testing.T) {
+    got := API_Blockchain_stats()
+    if got == nil {                
+		t.Errorf("API_Blockchain_stats has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Blockchain_block_data(t *testing.T) {
+    got := API_Blockchain_block_data(800000)
+    if got == nil {                
+		t.Errorf("API_Blockchain_block_data has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Blockchain_tx_data(t *testing.T) {
+    got := API_Blockchain_tx_data("d15005880f5f88b19fc88bdec29faaf57489ba85dd02d41ec87043a5eddf95a9")
+    if got == nil {                
+		t.Errorf("API_Blockchain_tx_data has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Blockchain_prove_tx(t *testing.T) {
+    got := API_Blockchain_prove_tx("d15005880f5f88b19fc88bdec29faaf57489ba85dd02d41ec87043a5eddf95a9","XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf","a15005880f5f88b19fc88bdec29faaf57489ba85dd02d41ec87043a5eddf95a9")
+    if got == nil {                
+		t.Errorf("API_Blockchain_prove_tx has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Blockchain_prove_balance(t *testing.T) {
+    got := API_Blockchain_prove_balance("XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf","ReserveProofV1a15005880f5f88b19fc88bdec29faaf57489ba85dd02d41ec87043a5eddf95a9")
+    if got == nil {                
+		t.Errorf("API_Blockchain_prove_balance has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Blockchain_tx_history(t *testing.T) {
+    got := API_Blockchain_tx_history("sender","XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf")
+    if got == nil {                
+		t.Errorf("API_Blockchain_tx_history has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Blockchain_validate_address(t *testing.T) {
+    got := API_Blockchain_validate_address("XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf")
+    if got == nil {                
+		t.Errorf("API_Blockchain_validate_address has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Blockchain_create_integrated_address(t *testing.T) {
+    got := API_Blockchain_create_integrated_address("XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf","")
+    if got == nil {                
+		t.Errorf("API_Blockchain_create_integrated_address has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_stats(t *testing.T) {
+    got := API_DPOPS_stats()
+    if got == nil {                
+		t.Errorf("API_DPOPS_stats has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_registered_delegates(t *testing.T) {
+    got := API_DPOPS_registered_delegates()
+    if got == nil {                
+		t.Errorf("API_DPOPS_registered_delegates has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_online_delegates(t *testing.T) {
+    got := API_DPOPS_online_delegates()
+    if got == nil {                
+		t.Errorf("API_DPOPS_online_delegates has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_active_delegates(t *testing.T) {
+    got := API_DPOPS_active_delegates()
+    if got == nil {                
+		t.Errorf("API_DPOPS_active_delegates has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_delegate(t *testing.T) {
+    got := API_DPOPS_delegate("us1_xcash_foundation")
+    if got == nil {                
+		t.Errorf("API_DPOPS_delegate has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_delegate_round_stats(t *testing.T) {
+    got := API_DPOPS_delegate_round_stats("us1_xcash_foundation")
+    if got == nil {                
+		t.Errorf("API_DPOPS_delegates_votes has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_delegates_votes(t *testing.T) {
+    got := API_DPOPS_delegates_votes("us1_xcash_foundation",1,2)
+    if got == nil {                
+		t.Errorf("API_Blockchain_create_integrated_address has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_vote_detail(t *testing.T) {
+    got := API_DPOPS_vote_detail("XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf")
+    if got == nil {                
+		t.Errorf("API_DPOPS_vote_detail has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_round_detail(t *testing.T) {
+    got := API_DPOPS_round_detail(810000)
+    if got == nil {                
+		t.Errorf("API_DPOPS_round_detail has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_DPOPS_last_block_producer(t *testing.T) {
+    got := API_DPOPS_last_block_producer()
+    if got == nil {                
+		t.Errorf("API_DPOPS_last_block_producer has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Namespace_stats(t *testing.T) {
+    got := API_Namespace_stats()
+    if got == nil {                
+		t.Errorf("API_Namespace_stats has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Namespace_registered_delegates(t *testing.T) {
+    got := API_Namespace_registered_delegates()
+    if got == nil {                
+		t.Errorf("API_Namespace_registered_delegates has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Namespace_delegates(t *testing.T) {
+    got := API_Namespace_delegates("us1_xcash_foundation")
+    if got == nil {                
+		t.Errorf("API_Namespace_delegates has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Namespace_names(t *testing.T) {
+    got := API_Namespace_names("xcash")
+    if got == nil {                
+		t.Errorf("API_Namespace_names has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Namespace_name_status(t *testing.T) {
+    got := API_Namespace_name_status("xcash")
+    if got == nil {                
+		t.Errorf("API_Namespace_name_status has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Namespace_address_status(t *testing.T) {
+    got := API_Namespace_address_status("XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf")
+    if got == nil {                
+		t.Errorf("API_Namespace_address_status has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Namespace_name_to_address(t *testing.T) {
+    got := API_Namespace_name_to_address("xcash")
+    if got == nil {                
+		t.Errorf("API_Namespace_name_to_address has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Namespace_address_to_name(t *testing.T) {
+    got := API_Namespace_address_to_name("XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf")
+    if got == nil {                
+		t.Errorf("API_Namespace_address_to_name has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Xpayment_Twitter_stats(t *testing.T) {
+    got := API_Xpayment_Twitter_stats()
+    if got == nil {                
+		t.Errorf("API_Xpayment_Twitter_stats has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Xpayment_Twitter_stats_per_day(t *testing.T) {
+    got := API_Xpayment_Twitter_stats_per_day(1,2)
+    if got == nil {                
+		t.Errorf("API_Xpayment_Twitter_stats_per_day has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Xpayment_Twitter_top_stats(t *testing.T) {
+    got := API_Xpayment_Twitter_top_stats(10)
+    if got == nil {                
+		t.Errorf("API_Xpayment_Twitter_top_stats has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
+
+func TestAPI_Xpayment_Twitter_recent_tips(t *testing.T) {
+    got := API_Xpayment_Twitter_recent_tips(10,"First","All")
+    if got == nil {                
+		t.Errorf("API_Xpayment_Twitter_recent_tips has had an error")
+	}
+	time.Sleep(5 * time.Second)
+}
