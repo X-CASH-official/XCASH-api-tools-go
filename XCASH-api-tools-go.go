@@ -574,7 +574,7 @@ func Blockchain_create_address(index int) (*BlockchainCreateAddress,*BlockchainE
     var d1 BlockchainCreateAddress
     var e1 BlockchainError
     
-	data_send,error := send_http_data("http://" + XCASH_WALLET_ADDRESS + "/json_rpc",`{"jsonrpc":"2.0","id":"0","method":"create_address","params":{"account_index":` + strconv.Itoa(height) + `}}`)
+	data_send,error := send_http_data("http://" + XCASH_WALLET_ADDRESS + "/json_rpc",`{"jsonrpc":"2.0","id":"0","method":"create_address","params":{"account_index":` + strconv.Itoa(index) + `}}`)
     if !strings.Contains(data_send, "\"result\"") || error != nil {
       if err := json.Unmarshal([]byte(data_send), &e1); err != nil {
         return nil,nil
