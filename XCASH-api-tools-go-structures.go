@@ -470,6 +470,58 @@ type BlockchainMakeIntegratedAddress struct {
 	} `json:"result"`
 }
 
+type BlockchainGetBalance struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Balance              int64 `json:"balance"`
+		MultisigImportNeeded bool  `json:"multisig_import_needed"`
+		PerSubaddress        []struct {
+			Address           string `json:"address"`
+			AddressIndex      int    `json:"address_index"`
+			Balance           int64  `json:"balance"`
+			Label             string `json:"label"`
+			NumUnspentOutputs int    `json:"num_unspent_outputs"`
+			UnlockedBalance   int64  `json:"unlocked_balance"`
+		} `json:"per_subaddress"`
+		UnlockedBalance int64 `json:"unlocked_balance"`
+	} `json:"result"`
+}
+
+type BlockchainGetAddress struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Address   string `json:"address"`
+		Addresses []struct {
+			Address      string `json:"address"`
+			AddressIndex int    `json:"address_index"`
+			Label        string `json:"label"`
+			Used         bool   `json:"used"`
+		} `json:"addresses"`
+	} `json:"result"`
+}
+
+type BlockchainGetAddressIndex struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Index struct {
+			Major int `json:"major"`
+			Minor int `json:"minor"`
+		} `json:"index"`
+	} `json:"result"`
+}
+
+type BlockchainCreateAddress struct {
+	ID      string `json:"id"`
+	Jsonrpc string `json:"jsonrpc"`
+	Result  struct {
+		Address      string `json:"address"`
+		AddressIndex int    `json:"address_index"`
+	} `json:"result"`
+}
+
 type BlockchainSplitIntegratedAddress struct {
 	ID      string `json:"id"`
 	Jsonrpc string `json:"jsonrpc"`
@@ -480,7 +532,7 @@ type BlockchainSplitIntegratedAddress struct {
 	} `json:"result"`
 }
 
-type BlcokchainRescanBlockchain struct {
+type BlockchainRescanBlockchain struct {
 	ID      string `json:"id"`
 	Jsonrpc string `json:"jsonrpc"`
 	Result  struct {
