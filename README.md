@@ -64,6 +64,7 @@ package main
 import (
 "fmt"
 "os"
+"encoding/json"
 "github.com/X-CASH-official/XCASH-api-tools-go"
 )
 
