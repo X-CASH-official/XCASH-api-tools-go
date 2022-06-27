@@ -502,8 +502,8 @@ func Blockchain_split_integrated_address(integrated_address string) (*Blockchain
   return &d1,&e1
 }
 
-func Blockchain_rescan_blockchain() (*BlcokchainRescanBlockchain,*BlockchainError) {
-    var d1 BlcokchainRescanBlockchain
+func Blockchain_rescan_blockchain() (*BlockchainRescanBlockchain,*BlockchainError) {
+    var d1 BlockchainRescanBlockchain
     var e1 BlockchainError
     
 	data_send,error := send_http_data("http://" + XCASH_WALLET_ADDRESS + "/json_rpc",`{"jsonrpc":"2.0","id":"0","method":"rescan_blockchain"}`)
@@ -518,6 +518,75 @@ func Blockchain_rescan_blockchain() (*BlcokchainRescanBlockchain,*BlockchainErro
   }
   return &d1,&e1
 }
+
+func Blockchain_get_balance() (*BlockchainGetBalance,*BlockchainError) {
+    var d1 BlockchainGetBalance
+    var e1 BlockchainError
+    
+	data_send,error := send_http_data("http://" + XCASH_WALLET_ADDRESS + "/json_rpc",`{"jsonrpc":"2.0","id":"0","method":"get_balance"}`)
+    if !strings.Contains(data_send, "\"result\"") || error != nil {
+      if err := json.Unmarshal([]byte(data_send), &e1); err != nil {
+        return nil,nil
+    }
+    return nil,&e1
+  }
+  if err := json.Unmarshal([]byte(data_send), &d1); err != nil {
+    return nil,nil
+  }
+  return &d1,&e1
+}
+
+func Blockchain_get_address() (*BlockchainGetAddress,*BlockchainError) {
+    var d1 BlockchainGetAddress
+    var e1 BlockchainError
+    
+	data_send,error := send_http_data("http://" + XCASH_WALLET_ADDRESS + "/json_rpc",`{"jsonrpc":"2.0","id":"0","method":"get_address"}`)
+    if !strings.Contains(data_send, "\"result\"") || error != nil {
+      if err := json.Unmarshal([]byte(data_send), &e1); err != nil {
+        return nil,nil
+    }
+    return nil,&e1
+  }
+  if err := json.Unmarshal([]byte(data_send), &d1); err != nil {
+    return nil,nil
+  }
+  return &d1,&e1
+}
+
+func Blockchain_get_address_index(address string) (*BlockchainGetAddressIndex,*BlockchainError) {
+    var d1 BlockchainGetAddressIndex
+    var e1 BlockchainError
+    
+	data_send,error := send_http_data("http://" + XCASH_WALLET_ADDRESS + "/json_rpc",`{"jsonrpc":"2.0","id":"0","method":"get_address_index","params":{"address":"` + address + `"}}`)
+    if !strings.Contains(data_send, "\"result\"") || error != nil {
+      if err := json.Unmarshal([]byte(data_send), &e1); err != nil {
+        return nil,nil
+    }
+    return nil,&e1
+  }
+  if err := json.Unmarshal([]byte(data_send), &d1); err != nil {
+    return nil,nil
+  }
+  return &d1,&e1
+}
+
+func Blockchain_create_address(index int) (*BlockchainCreateAddress,*BlockchainError) {
+    var d1 BlockchainCreateAddress
+    var e1 BlockchainError
+    
+	data_send,error := send_http_data("http://" + XCASH_WALLET_ADDRESS + "/json_rpc",`{"jsonrpc":"2.0","id":"0","method":"create_address","params":{"account_index":` + strconv.Itoa(height) + `}}`)
+    if !strings.Contains(data_send, "\"result\"") || error != nil {
+      if err := json.Unmarshal([]byte(data_send), &e1); err != nil {
+        return nil,nil
+    }
+    return nil,&e1
+  }
+  if err := json.Unmarshal([]byte(data_send), &d1); err != nil {
+    return nil,nil
+  }
+  return &d1,&e1
+}
+
 
 func Blockchain_get_tx_key(tx string) (*BlockchainGetTxKey,*BlockchainError) {
     var d1 BlockchainGetTxKey
