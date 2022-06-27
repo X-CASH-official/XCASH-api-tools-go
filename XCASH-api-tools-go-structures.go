@@ -665,22 +665,6 @@ type NamespaceRemoteDataRenewalEnd struct {
 	} `json:"result"`
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 type APIBlockchainStats struct {
 	Height                 int `json:"height"`
 	Hash                   string `json:"hash"`
