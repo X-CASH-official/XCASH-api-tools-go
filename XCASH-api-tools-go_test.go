@@ -10,7 +10,7 @@ func TestInitialize(t *testing.T) {
     time.Sleep(5 * time.Second)
 }
 
-/*func TestBlockchain_get_block_count(t *testing.T) {
+func TestBlockchain_get_block_count(t *testing.T) {
     got,error := Blockchain_get_block_count()
     if got == nil && error == nil {                
 		t.Errorf("Blockchain_get_block_count has had an error")
@@ -173,7 +173,7 @@ func TestBlockchain_get_height(t *testing.T) {
         t.Errorf("Blockchain_get_height has had an error. %s",error.Error.Message)
 	}
 	time.Sleep(5 * time.Second)
-}*/
+}
 
 func TestAPI_Blockchain_stats(t *testing.T) {
     got := API_Blockchain_stats()
@@ -192,7 +192,7 @@ func TestAPI_Blockchain_block_data(t *testing.T) {
 }
 
 func TestAPI_Blockchain_tx_data(t *testing.T) {
-    got := API_Blockchain_tx_data("d15005880f5f88b19fc88bdec29faaf57489ba85dd02d41ec87043a5eddf95a9")
+    got := API_Blockchain_tx_data("18a5046994bec4e75d46fd17de3315592aa69d11f4b1a530717ea45a01d49312")
     if got == nil {                
 		t.Errorf("API_Blockchain_tx_data has had an error")
 	}
@@ -200,7 +200,7 @@ func TestAPI_Blockchain_tx_data(t *testing.T) {
 }
 
 func TestAPI_Blockchain_prove_tx(t *testing.T) {
-    got := API_Blockchain_prove_tx("d15005880f5f88b19fc88bdec29faaf57489ba85dd02d41ec87043a5eddf95a9","XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf","a15005880f5f88b19fc88bdec29faaf57489ba85dd02d41ec87043a5eddf95a9")
+    got := API_Blockchain_prove_tx("18a5046994bec4e75d46fd17de3315592aa69d11f4b1a530717ea45a01d49312","XCA1cH8Qs5hLYnzQTDuJqkJiQEZbgQsUM3BgA6vBod5T5Eindas5sikKJaLbkhM3YBW7PtoJY6BtNLkZuahksLFX5eSPDcmCLL","c10a439b706949e86146ca17c2fc41e24e4348d6b7a6d6af0623cfc5037fe20c")
     if got == nil {                
 		t.Errorf("API_Blockchain_prove_tx has had an error")
 	}
@@ -216,7 +216,7 @@ func TestAPI_Blockchain_prove_balance(t *testing.T) {
 }
 
 func TestAPI_Blockchain_tx_history(t *testing.T) {
-    got := API_Blockchain_tx_history("sender","XCA1a9usG2UKajV1Dqzp8fL1BbN3hzuaaJMYjCo7qDoC4C3Vvc5owiLAqKbVw2cRbwRqx3mgrau1Z7LkX6cxR2NC4ZmFBLe2Mf")
+    got := API_Blockchain_tx_history("sender","XCA1kzoR3ZLNg5zxNmxrY8FYKtgEvPZqC2xoRpm1axCpQcrrZfoKTSkSNsASDspdt3j1WcEnQJyuuB5VPSB56WWy36A4sQtQhe")
     if got == nil {                
 		t.Errorf("API_Blockchain_tx_history has had an error")
 	}
