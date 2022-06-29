@@ -1,7 +1,6 @@
 package xcash
 
 import (
-"fmt"
 "strings"
 "bytes"
 "strconv"
@@ -41,8 +40,6 @@ func send_http_data(url string,data string) (string, error) {
   
   // get the response body
   body, _ := ioutil.ReadAll(resp.Body)
-  
-  fmt.Println(string(body))
 
   return string(body),nil
 }
@@ -58,8 +55,6 @@ func send_http_data_get(url string) (string, error) {
   
   // get the response body
   body, _ := ioutil.ReadAll(resp.Body)
-  
-  fmt.Println(string(body))
 
   return string(body),nil
 }
