@@ -132,7 +132,7 @@ func TestBlockchain_version(t *testing.T) {
 }
 
 func TestBlockchain_get_tx(t *testing.T) {
-    got,error := Blockchain_get_tx("35f9dccaf21dfe1df0945ebfc8b3ef28977b4ea1a78b3726c9f866facd27f7ad")
+    got,error := Blockchain_get_tx("18a5046994bec4e75d46fd17de3315592aa69d11f4b1a530717ea45a01d49312")
     if got == nil && error == nil {                
 		t.Errorf("Blockchain_get_tx has had an error")
 	}
